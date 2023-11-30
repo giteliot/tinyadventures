@@ -1,0 +1,17 @@
+BUGS
+- sometimes characters are generated on walls smh
+- what happens in multiple simultaneous npc interaction
+
+IMPROVEMENTS
+- put the selectable options 1 - 2 - 3 in different color
+- add a full example of a few interactions
+- add a random vibe in the beginning
+
+FEATS
+- fog of war
+- make the characters disappear after they are done
+- can we do speaker using whispers?
+
+- how can I split the story making in multiple parts, that are independent from one another
+	- instead of bringing all the history with me all the time, I can just bring the overall story
+	- and a recap of what happened
