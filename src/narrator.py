@@ -15,7 +15,6 @@ class Narrator:
 		self.loading_init_time = pygame.time.get_ticks
 
 	def set_text(self, text):
-		self.loading_init_time = 0
 		self.text = text
 
 	def wrap_text(self):
@@ -89,7 +88,4 @@ class Narrator:
 				)
 		)
 
-		if self.loading_init_time > 0:
-			self.display_loading()
-		else:
-			self.display_text()
+		self.display_text()

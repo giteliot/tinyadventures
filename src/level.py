@@ -5,7 +5,7 @@ from src.player import Player
 from src.npc import Npc
 from src.narrator import Narrator
 from src.utils import get_free_tile
-from src.model.level_generator import LevelGenerator
+from src.model.game_master import GameMaster
 
 
 class Level:
@@ -16,10 +16,13 @@ class Level:
 		self.action_sprites = pygame.sprite.Group()
 
 		self.narrator = Narrator()
-		self.level_generator = LevelGenerator()
+		
+		self.game_master = GameMaster()
+
 		self.create_map()
 		self.run()
-		self.narrator.set_text(self.level_generator.get_opening_message())
+		
+		self.narrator.set_text(self.game_master.get_intro_message())
 
 	def create_map(self):
 		for row_index, row in enumerate(WORLD_MAP):
@@ -37,9 +40,9 @@ class Level:
 			if c == 'p':
 				self.player =  Player((x,y), [self.visible_sprites], self.obstacle_sprites, self.action_sprites)
 			if c == 'l':
-				Npc((x,y), [self.visible_sprites, self.obstacle_sprites, self.action_sprites], self.narrator, self.level_generator, 'Genoveffa', 'lady')
+				Npc((x,y), [self.visible_sprites, self.obstacle_sprites, self.action_sprites], self.narrator, self.game_master, 'Genoveffa', 'lady')
 			if c == 'd':
-				Npc((x,y), [self.visible_sprites, self.obstacle_sprites, self.action_sprites], self.narrator, self.level_generator, 'Charly', 'dog')
+				Npc((x,y), [self.visible_sprites, self.obstacle_sprites, self.action_sprites], self.narrator, self.game_master, 'Charly', 'dog')
 
 	def run(self):
 		self.visible_sprites.custom_draw(self.player)

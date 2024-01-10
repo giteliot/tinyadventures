@@ -44,16 +44,16 @@ class Player(pygame.sprite.Sprite):
 		self.hitbox.y += self.direction.y * speed
 		self.collision('vertical')
 		self.rect.center = self.hitbox.center
+		self.action_interactions()
 
-	def collision(self, direction):
+	def action_interactions(self):
 		for sprite in self.action_sprites:
-			if sprite.hitbox.colliderect(self.hitbox):
-				sprite.action()
-			elif distance(sprite.hitbox, self.hitbox) > 128:
+			if distance(sprite.hitbox, self.hitbox) > 70:
 				sprite.leave()
 			else:
 				sprite.interact()
 
+	def collision(self, direction):
 		if direction == 'horizontal':
 			for sprite in self.obstacle_sprites:
 				if sprite.hitbox.colliderect(self.hitbox):
