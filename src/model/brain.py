@@ -8,7 +8,7 @@ class Brain(LLMConnector):
 	def __init__(self, base_prompt):
 		super().__init__()
 
-		self.prompt = [{"role": "system", "content": f"{base_prompt} Use maximum 20 words for each reply."}]
+		self.prompt = [{"role": "system", "content": get_enriched_npc_prompt(base_prompt)}]
 
 	def interact(self, user_message):
 		self.prompt.append({"role": "user", "content": user_message})

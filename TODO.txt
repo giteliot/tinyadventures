@@ -10,5 +10,4 @@ FEATS
 - can we do speaker using whispers?
 
 NEXT
-- fix ending triggering too soon
-- fix actions being random and not fixed
+- make the story atteinable, make it enforce contraints

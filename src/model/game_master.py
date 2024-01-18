@@ -9,8 +9,11 @@ class GameMaster(LLMConnector):
 		prompt = [{"role": "system", "content": admin_prompt},
 				  {"role": "user", "content": backstory_prompt}]
 
-		# story_obj = self.get_json_answer(prompt)
-		story_obj = {'lady_prompt': 'You are a graceful lady wandering through the woods, searching for your lost pet dog. You are kind-hearted and in need of assistance to find and reunite with your beloved companion.', 'dog_prompt': 'You are a loyal dog, but currently distressed and wary of strangers in the woods. You cannot communicate verbally and may appear aggressive at first, but you deeply desire to be reunited with your lady companion.', 'win_scenario': 'The dog is successfully calmed and reunited with the lady.', 'lose_scenarios': 'The dog runs away and is lost forever; the lady is injured or lost in the woods.'}
+		story_obj = self.get_json_answer(prompt)
+
+		print(story_obj)
+		print()
+		# story_obj = {'lady_prompt': 'You are a graceful lady wandering through the woods, searching for your lost pet dog. You are kind-hearted and in need of assistance to find and reunite with your beloved companion.', 'dog_prompt': 'You are a loyal dog, but currently distressed and wary of strangers in the woods. You cannot communicate verbally and may appear aggressive at first, but you deeply desire to be reunited with your lady companion.', 'win_scenario': 'The dog is successfully calmed and reunited with the lady.', 'lose_scenarios': 'The dog runs away and is lost forever; the lady is injured or lost in the woods.'}
 		
 		for k,v in story_obj.items():
 			setattr(self, k, v)

@@ -41,8 +41,8 @@ class Npc(pygame.sprite.Sprite):
 		else:
 			user_text = user_choice['option_text']
 			# here I should take action if game is over or npc is dead
-			if user_choice['is_game_over'] != 0:
-				print(f"GAME OVER DIO CAN; {user_choice['is_game_over']}")
+			if user_choice['is_game_over_win'] == True or user_choice['is_game_over_loss'] == True:
+				print(f"GAME OVER DIO CAN;")
 			if user_choice['is_npc_done'] == True:
 				print(f"KILL THE MF; {user_choice['is_npc_done']}")
 
