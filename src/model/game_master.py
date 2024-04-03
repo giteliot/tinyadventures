@@ -25,7 +25,6 @@ class GameMaster(LLMConnector):
 		return getattr(self, f'{npc_type}_prompt')
 
 	def get_intro_message(self):
-		return "welcome to the woods, look around, bitch."
 		prompt = [{"role": "system", "content": admin_prompt},
 				  {"role": "user", "content": intro_prompt}]
 
